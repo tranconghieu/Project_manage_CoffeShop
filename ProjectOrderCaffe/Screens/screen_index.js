@@ -7,12 +7,15 @@ import getToken from '../api/getToken';
 class Abc extends Component {
   componentDidMount (){
       getToken()
-      .then(token => JSON.parse(token))
-      .then(res =>  this.props.dispatch({ type : 'LOAD_USER' , user : res.user }))
+      .then(token => {
+        const res = JSON.parse( token);
+        this.props.dispatch({ type : 'LOAD_USER' , user : res.user })
+      })
   }
   //
   render(){
     const {user} = this.props.data;
+    //console.log(user);
     return(
       <View style={{flex :1}}>
         { (user != null ?  <AppContainer></AppContainer> :   <SignIn></SignIn>) }

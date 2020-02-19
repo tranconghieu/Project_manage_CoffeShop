@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   View, Text, StyleSheet,
   TouchableOpacity
-  , FlatList, ActivityIndicator
+  , FlatList, ActivityIndicator,Alert
 } from 'react-native';
 import { connect } from 'react-redux';
 import Order_Item from '../Compoment/Order_item';
@@ -46,20 +46,34 @@ class Order extends Component {
       ></FlatList>
     )
   }
+  add_order_succesfull =(text_massage , callback) =>{
+    const { navigation } = this.props;
+    //debugger;
+      Alert.alert(
+        'Thông báo từ máy chủ',
+        text_massage,
+        [
+          {text: 'OK', onPress: () =>{ (typeof(callback) == 'function') && (callback.call(navigation) ) }},
+        ]
+      );
+  }
   async add_order_api() {
+
+    
     const str_token = await getTokent();
     const token =  JSON.parse(str_token).token
     const arr_cart = await getCart();
     const is_success = await add_order(token,arr_cart)
+    //debugger
     if (is_success) {
        saveCart([]);
        this.props.dispatch({ type: 'lOAD_ARR_CART', arraycart: [], isloading: true })
-       alert("Thêm đơn hàng thành công !")
+       this.add_order_succesfull('Đặt đơn thành công',function(){this.navigate('Table') });
     }
     else {
       alert("Thêm đơn hàng thất bại !")
     }
-    //debugger
+    // //debugger
       
   }
   login = () => {

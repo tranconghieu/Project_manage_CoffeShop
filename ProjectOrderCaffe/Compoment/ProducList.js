@@ -40,7 +40,7 @@ import Modal from 'react-native-modalbox';
 
   render() {
     const { product,table_id } = this.props;
-    
+    //console.log('Product List ' ,product);
     return (
       <View style={styles.itemContent}>
         <Modal
@@ -83,7 +83,7 @@ import Modal from 'react-native-modalbox';
               </View>
         </Modal>
         <View style={styles.iconContainer}>
-          <Image source={{ uri: `http://192.168.1.162:88/apiCoffeeShop/images/${product.Image}` }} style={styles.categoryImage}
+          <Image source={{ uri: `http://coffeeshop.zanluv.com/lbr/images/${product.Image}` }} style={styles.categoryImage}
           ></Image>
         </View>
         <View style={styles.textContainer}>

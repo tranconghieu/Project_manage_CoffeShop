@@ -30,7 +30,7 @@ export default class Categoty extends Component {
     }
   }
   componentDidMount() {
-    fetch(`http://192.168.1.162:88/apiCoffeeShop/get_type.php`)
+    fetch(`http://apicoffeeshop.coffeeshop.zanluv.com/get_type.php`)
       .then((response) => response.json())
       .then((responseJson) => {
 

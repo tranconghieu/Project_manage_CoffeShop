@@ -6,7 +6,7 @@ export default class CatygoryList extends  Component {
         
         return(
             <View  style={{borderBottomWidth:2,alignItems:'center'}}>
-                <Image source={{uri:`http://192.168.1.162:88/apiCoffeeShop/images/${category.images}`}} 
+                <Image source={{uri:`http://apicoffeeshop.coffeeshop.zanluv.com/images/${category.images}`}} 
                           style={styles.categoryImage}
                 ></Image>
                 <Text style={styles.TextTable}>{category.CategoryName}</Text> 

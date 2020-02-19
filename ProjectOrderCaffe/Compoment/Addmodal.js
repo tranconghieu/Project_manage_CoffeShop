@@ -9,7 +9,7 @@ export default class ProductList extends Component {
          
             <View style={styles.itemContent}>
                 <View style={styles.iconContainer}>
-                     <Image source={{ uri: `192.168.1.162:88/apiCoffeeShop/apiCoffeeShop/images/${product.Image}` }}
+                     <Image source={{ uri: `apicoffeeshop.coffeeshop.zanluv.com/apiCoffeeShop/images/${product.Image}` }}
                         style={styles.categoryImage}
                     ></Image>
                 </View>

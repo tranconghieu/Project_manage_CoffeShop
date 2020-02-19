@@ -35,9 +35,10 @@ class Table extends React.Component {
     refresh_table() {
         const { navigation } = this.props;
         this.setState({ isloading: true });
-        fetch('http://192.168.1.162:88/apiCoffeeShop/table.php')
+        fetch('http://apicoffeeshop.coffeeshop.zanluv.com/table.php')
             .then((response) => response.json())
             .then((responseJson) => {
+                //console.log(responseJson);
                 if (JSON.stringify(responseJson) != JSON.stringify(this.props.data.Table)) {
                     this.props.dispatch({ type: 'load_table', Table: responseJson, navigation: navigation });
                     this.setState({ isloading: false });

@@ -31,7 +31,7 @@ class Product extends Component {
   }
   componentDidMount() {
     const categoryId = this.props.navigation.getParam('categoryId');
-    fetch(`http://192.168.1.162:88/apiCoffeeShop/product_by_type.php/?id_type=${categoryId}`)
+    fetch(`http://apicoffeeshop.coffeeshop.zanluv.com/product_by_type.php/?id_type=${categoryId}`)
 
       .then((response) => response.json())
       .then((responseJson) => {
